@@ -13,7 +13,7 @@ public class Hub {
 	static WebDriver driver;
 	static String nodeUrl;
 	
-	public static void main(String[] args) {
+	public static void seleniumGrid() {
 		try {
 			nodeUrl = "http://192.168.122.80:555/wd/hub";
 			DesiredCapabilities capability = DesiredCapabilities.chrome();

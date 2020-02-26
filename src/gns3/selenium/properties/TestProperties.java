@@ -9,9 +9,12 @@ import gns3.selenium.webdriver.Main;
 public class TestProperties {
 	
 	public static void readFile() {
-		Properties prop = new Properties();
+		String projectPath = System.getProperty("user.dir");
+		System.out.println(projectPath);
+		
 		try {
-			InputStream input = new FileInputStream("/Users/aalif/Documents/GitHub/selenium-testing/src/gns3/selenium/properties/config.properties");
+			Properties prop = new Properties();
+			InputStream input = new FileInputStream(projectPath + "/config.properties");
 			prop.load(input);
 			Main.browser = prop.getProperty("browser");
 			Main.testEnv = prop.getProperty("testEnv");

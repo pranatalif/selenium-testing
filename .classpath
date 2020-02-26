@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/bundle-jars.jar"/>
 	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/javax.servlet-api-3.1.0.jar"/>
 	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/jcip-annotations-1.0.jar"/>
@@ -44,5 +53,140 @@
 	<classpathentry kind="lib" path="lib/selenium-java-3.141.59/libs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="lib/htmlunit-2.37.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-htmlunit-driver-2.52.0.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="lib/ApacheJMeter_core-5.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jorphan-5.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_bolt.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_components.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_core.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_ftp.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_functions.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_http.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_java.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_jms.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_junit.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_ldap.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_mail.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_mongodb.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_native.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/ApacheJMeter_tcp.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-casutg-2.9.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-dummy-0.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-ffw-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-fifo-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-functions-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-graphs-basic-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-manager-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-perfmon-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-tst-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ext/jmeter-plugins-webdriver-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/accessors-smart-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/apiguardian-api-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/asm-7.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/bsf-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/bsh-2.0b6.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/bshclient.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/caffeine-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/checker-qual-2.10.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/cmdrunner-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-codec-1.13.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-dbcp2-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-jexl-2.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-jexl3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-lang3-3.9.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-net-3.6.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-pool2-2.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/commons-text-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/darcula-e208efb96f70e4be9dc362fbb46f6e181ef501dd.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/dec-0.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/dnsjava-2.1.9.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/error_prone_annotations-2.3.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/freemarker-2.3.29.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/geronimo-jms_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/groovy-all-2.4.16.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/hamcrest-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/hamcrest-core-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/hamcrest-date-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/htmlunit-2.32.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/htmlunit-core-js-2.32.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/htmlunit-cssparser-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/htmlunit-driver-2.33.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/httpasyncclient-4.1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/httpclient-4.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/httpcore-4.4.12.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/httpcore-nio-4.4.12.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/httpmime-4.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jackson-annotations-2.9.10.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jackson-core-2.9.10.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jackson-databind-2.9.10.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/javax.activation-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jcharts-0.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jcl-over-slf4j-1.7.28.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jmespath-core-0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jmespath-jackson-0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jmeter-plugins-cmn-jmeter-0.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jodd-core-5.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jodd-lagarto-5.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jodd-log-5.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jodd-props-5.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jorphan.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/json-path-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/json-smart-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jsoup-1.12.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jsyntaxpane-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/jtidy-r938.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/log4j-1.2-api-2.12.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/log4j-api-2.12.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/log4j-core-2.12.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/log4j-slf4j-impl-2.12.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/mail-1.5.0-b01.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/miglayout-core-5.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/miglayout-swing-5.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/mongo-java-driver-2.11.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/mysql-connector-java-8.0.19.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/neko-htmlunit-2.32.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/neo4j-java-driver-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/okhttp-3.10.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/okio-1.14.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/perfmon-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ph-commons-9.3.7.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/ph-css-6.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/phantomjsdriver-1.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/rhino-1.7.11.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/rsyntaxtextarea-3.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/Saxon-HE-9.9.1-5.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-api-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-chrome-driver-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-firefox-driver-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-ie-driver-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-java-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-remote-driver-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/selenium-support-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/slf4j-api-1.7.28.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/tika-core-1.22.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/tika-parsers-1.22.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xercesImpl-2.12.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xmlgraphics-commons-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xmlpull-1.1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="lib/jmeter-lib/xstream-1.4.11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

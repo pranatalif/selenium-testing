@@ -60,7 +60,7 @@ public class Main {
 	
 	public static void testDummy() {
 		try {
-			driver.get("http://sites.google.com/view/alif-akbar-pranata");
+			driver.get("http://example.com");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
