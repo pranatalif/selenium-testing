@@ -3,6 +3,7 @@ package gns3.selenium.webdriver;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -14,32 +15,45 @@ import java.lang.Thread;
 import gns3.selenium.webpages.*;
 
 public class Main {
+	public static String projectPath;
 	public static WebDriver driver = null;
 	public static String browser = null;
+	public static String browserMode = null;
 	public static String testEnv = null;
+	public static String scenario = null;
 	public static String adminName = null;
 	public static String adminPass = null;
 	public static String userName = null;
 	public static String userPass = null;
+	public static String localIP = "localhost";
 
-	public static void invokeBrowser() {
+	public static void invokeBrowser(String path) {
 		//System.out.println(browser + ", " + userName + " and " + userPass);
 		try {
 			if(browser.contains("Firefox")) {
-				WebDriverManager.firefoxdriver().setup();
+				//WebDriverManager.firefoxdriver().setup(); #use this if run in local machine
+				System.setProperty("webdriver.gecko.driver", path + "/driver/geckodriver");
 				FirefoxOptions options = new FirefoxOptions();
-				options.setHeadless(true);
-				driver = new FirefoxDriver(options);
+				if(browserMode.equals("GUI")) {
+					driver = new FirefoxDriver();
+				} else if(browserMode.equals("Headless")) {
+					driver = new FirefoxDriver(options.setHeadless(true));
+				}
 			} else if(browser.contains("Chrome")) {
-				WebDriverManager.chromedriver().setup();
-				//ChromeOptions options = new ChromeOptions();
-				//options.addArguments("--headless");
-				//driver = new ChromeDriver(options);
-				driver = new ChromeDriver();
+				//WebDriverManager.chromedriver().setup(); #use this if run in local machine
+				System.setProperty("webdriver.chrome.driver", path + "/driver/chromedriver");
+				//System.out.println(path + "/driver/chromedriver");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--no-sandbox");
+				options.setExperimentalOption("useAutomationExtension", false);
+				options.addArguments("--headless");
+				if(browserMode.equals("GUI")) {
+					driver = new ChromeDriver();
+				} else if(browserMode.equals("Headless")) {
+					driver = new ChromeDriver(options);
+				}	
 			} else if(browser.contains("HtmlUnit")){
 				driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_60);
-				
-				
 			} else if(browser.contains("Phantomjs")){
 				WebDriverManager.phantomjs().setup();
 				driver = new PhantomJSDriver();
@@ -55,7 +69,6 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 	
 	public static void testDummy() {
@@ -66,20 +79,38 @@ public class Main {
 		}
 	}
 
-	public static void testKeycloakAdmin() {
+	public static void testKeycloakAdmin(String ip) {
 		try {
-			driver.get("http://localhost:8080");
+			if(testEnv.equals("local")) {
+				ip = localIP;
+				//driver.get("http://" + ip + ":8080");
+			} 
+			//else if(testEnv.equals("remote")) {
+			//	driver.get("http://" + ip + ":8080");
+			//} 
+			//else {
+			//	System.out.println("Incorrect testEnv selection. Check you config file");
+			//	System.exit(0);
+			//}
+			driver.get("http://" + ip + ":8080");
 			KeycloakHomePage keycloak = new KeycloakHomePage(driver, adminName, adminPass);
-			keycloak.clickAdminLink();
+			keycloak.clickAdminLink(ip);
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void testHLS() {
+	public static void testHLS(String ip) {
 		try {
-			driver.get("http://localhost:3000/index.html");
+			if(testEnv.equals("local")) {
+				driver.get("http://" + localIP + ":8080");
+			} else if(testEnv.equals("remote")) {
+				driver.get("http://" + ip + ":8080");
+			} else {
+				System.out.println("Incorrect testEnv selection. Check you config file");
+				System.exit(0);
+			}
 			KeycloakLoginPage keycloak = new KeycloakLoginPage(driver);
 			//keycloak.loginSequence();
 			keycloak.inputUsername(userName);
@@ -107,18 +138,27 @@ public class Main {
 		driver.quit();
 	}
 
-	public static void main(String[] args) {
-		TestProperties.readFile();
+	public static void main(String[] args) throws InterruptedException {
+		projectPath = System.getProperty("user.dir");
+		System.out.println("[INFO] Project path: " + projectPath);
+		
+		TestProperties.readFile(projectPath);
 		System.out.println("[INFO] Testing in " + browser + " browser");
-		invokeBrowser();
-		if(testEnv.contains("Keycloak")) {
-			testKeycloakAdmin();
-		}else if(testEnv.contains("HLS")) {
-			testHLS();
-		}else if(testEnv.contains("Dummy")) {
+		invokeBrowser(projectPath);
+		if(scenario.contains("Keycloak")) {
+			String remoteIP = "192.168.122.20";
+			testKeycloakAdmin(remoteIP);
+		}else if(scenario.contains("HLS")) {
+			String remoteIP = "192.168.122.11";
+			testHLS(remoteIP);
+		}else if(scenario.contains("Proxy")) {
+			String remoteIP = "hls.gns3.fr";
+			testHLS(remoteIP);
+		}else if(scenario.contains("Dummy")) {
 			testDummy();
 		}
 		getWebInfo();
+		Thread.sleep(3000);
 		exitTesting();
 	}
 

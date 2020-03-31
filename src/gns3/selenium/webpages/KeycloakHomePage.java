@@ -10,16 +10,17 @@ public class KeycloakHomePage {
 	private static WebElement element = null;
 	public String username = null;
 	public String password = null;
-	By lnk_adminconsole = By.xpath("//a[@href='http://localhost:8080/auth/admin/']");
+	static By lnk_adminconsole = By.xpath("//a[@href='http://localhost:8080/auth/admin/']");
 	
 	public KeycloakHomePage(WebDriver driver, String username, String password) {
 		KeycloakHomePage.driver = driver;
+		//this.ip=ip;
 		this.username = username;
 		this.password = password;
 	}
 	
-	public void clickAdminLink() throws InterruptedException {
-		driver.findElement(lnk_adminconsole).sendKeys(Keys.RETURN);
+	public void clickAdminLink(String ip) throws InterruptedException {
+		driver.findElement(By.xpath("//a[@href='http://" + ip + ":8080/auth/admin/']")).sendKeys(Keys.RETURN);
 		loginSequence();
 	}
 	
@@ -32,7 +33,7 @@ public class KeycloakHomePage {
 	}
 	
 	public static WebElement findAdminConsoleLink(WebDriver driver) {
-		element = driver.findElement(By.xpath("//a[@href='http://localhost:8080/auth/admin/']"));
+		element = driver.findElement(lnk_adminconsole);
 		return element;
 	}
 }
