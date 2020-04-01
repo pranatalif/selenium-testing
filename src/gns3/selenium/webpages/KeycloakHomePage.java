@@ -1,6 +1,12 @@
 package gns3.selenium.webpages;
 
+import java.util.List;
+
+//import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,12 +30,31 @@ public class KeycloakHomePage {
 		loginSequence();
 	}
 	
+	public static void loginAssertion() {
+		boolean errorMessage = driver.findElements(By.xpath("//span[@class='kc-feedback-text']")).isEmpty();
+//		List<WebElement> ele = driver.findElements(By.xpath("//span[@class='kc-feedback-text']"));
+//		System.out.println(ele);
+		try {
+			if (errorMessage == true){
+				System.out.println("Test passed: Logged in");	
+			}
+		} catch(Exception e) {
+		    System.out.println("Test failed: Authentication login failed");
+		    e.printStackTrace();
+		    driver.close();
+			driver.quit();
+			Assert.fail();
+		} 
+	}
+	
 	public void loginSequence() throws InterruptedException {
 		KeycloakLoginPage login = new KeycloakLoginPage(driver);
 		login.inputUsername(username);
 		login.inputPassword(password);
 		Thread.sleep(2000);
 		login.clickLogin();
+		loginAssertion();
+		//System.out.println(driver.findElement(By.xpath("//span[@class='kc-feedback-text']")).getText());
 	}
 	
 	public static WebElement findAdminConsoleLink(WebDriver driver) {

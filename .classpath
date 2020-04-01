@@ -2,20 +2,22 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/bundle-jars.jar"/>
-	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/javax.servlet-api-3.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/jcip-annotations-1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/jcommander-1.72.jar"/>
-	<classpathentry kind="lib" path="/Users/aalif/Documents/GitHub/selenium-testing/lib/selenium-server-3.141.59/libs/snakeyaml-1.19.jar"/>
+	<classpathentry kind="lib" path="/home/gns3/Git/selenium-testing/lib/selenium-server-3.141.59/bundle-jars.jar"/>
+	<classpathentry kind="lib" path="/home/gns3/Git/selenium-testing/lib/selenium-server-3.141.59/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/gns3/Git/selenium-testing/lib/selenium-server-3.141.59/jcip-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="/home/gns3/Git/selenium-testing/lib/selenium-server-3.141.59/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="/home/gns3/Git/selenium-testing/lib/snakeyaml-1.19.jar"/>
 	<classpathentry kind="lib" path="lib/webdrivermanager-3.8.1-fat.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-3.141.59-nodeps.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.141.59.jar"/>
@@ -183,9 +185,35 @@
 	<classpathentry kind="lib" path="lib/jmeter-lib/xmlpull-1.1.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/jmeter-lib/xpp3_min-1.1.4c.jar"/>
 	<classpathentry kind="lib" path="lib/jmeter-lib/xstream-1.4.11.jar"/>
+	<classpathentry kind="lib" path="lib/bundle-jars.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcip-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="lib/snakeyaml-1.19.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.141.59/bundle-jars.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.141.59/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.141.59/jcip-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.141.59/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.141.59/snakeyaml-1.19.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
