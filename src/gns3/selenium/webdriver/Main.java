@@ -114,7 +114,7 @@ public class Main {
 			keycloak.inputUsername(userName);
 			keycloak.inputPassword(userPass);
 			//Thread.sleep(2000);
-			keycloak.clickLogin();
+			keycloak.clickLogin(); //s
 			loginAssertion();
 			//Thread.sleep(1000);
 			HLSHomePage hls = new HLSHomePage(driver);
